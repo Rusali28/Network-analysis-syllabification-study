@@ -40,7 +40,7 @@ for i in range(len(words)):
 syll = list(dutchdata['syllables'])
 
 
-#Remove special characters from syll list - dictspell will store individual lists of all syllables for every word
+#Remove special characters from syll list - finalsyll will store individual lists of all syllables for every word
 dictspell = {}
 finalsyll = []
 for i in range(len(syll)):
