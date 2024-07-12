@@ -113,4 +113,63 @@ with open('aoagraph_spel_wgt.pkl','wb') as file:
     pickle.dump(aoagraph, file)
 
 print("DONEEEEEEEE___________")
+
+##TO BUILD YEARWISE LEXICAL GRAPHS (aoagraphs) - for each yearwise data, we construct a new network, which is built upon cumulative yearwise data starting from the first year, up till the year being considered in the particular iteration
+
+def yearwisewordgraph(n, yearname):
+    
+    yeargraph = {}
+
+    for i in aoadict:
+        if aoadict[i] <= (n*12):
+            yeargraph[i] = aoadict[i]
+
+    m = list(yeargraph.keys())
+    n = list(dictspell.keys())
+
+    comlist = []
+    for i in m:
+        if n.count(i) != 0:
+            comlist.append(i)
+
+    len(comlist), comlist
+    
+    yeargraphg = nx.Graph()
+
+    for i in range(len(comlist)):
+        yeargraphg.add_node(comlist[i], weight = aoadict[comlist[i]])
+
+    from itertools import combinations
+    newtry = list(combinations(comlist,2))
+
+    for i,j in newtry:
+        count = 0
+        list1 = list(dictspell[i])[:]
+        list2 = list(dictspell[j])[:]
+        for k in list1:
+            for m in list2:
+                if(k==m):
+                    count+=1
+                    i1 = list1.index(k)
+                    i2 = list2.index(m)
+                    rand = random.sample(range(1,8000),2)
+                    list1[i1] = str(rand[0])
+                    list2[i2] = str(rand[1])
+                    break
+        if(count!=0):
+            data = []
+            tup = ()
+            yeargraphg.add_edge(i,j,weight=count)
+            #print("Edge added between ",i," and ", j, " ----weight: ", count)
+
+
+    print(yeargraphg, len(yeargraphg.nodes), len(yeargraphg.edges))
+    
+    import pickle
+    
+    yearname = str("./yearwise wordgraphs/" + yearname+"yeargraph.pkl")
+
+    with open(yearname,'wb') as file:
+        pickle.dump(yeargraphg, file)
+
     
