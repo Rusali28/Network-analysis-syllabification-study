@@ -98,4 +98,4 @@ import pickle
 with open('syllgraph_spanish_unwgt_pron.pkl','wb') as file:
     pickle.dump(syllgraph_spanish_unwgt, file)
 
-print("DONEEEEEEEE___________")
+print("DONE___________")

@@ -96,4 +96,4 @@ import pickle
 with open('dutchgraph_unwgt.pkl','wb') as file:
     pickle.dump(dutchgraph, file)
 
-print("DONEEEEEEEE___________")
+print("DONE___________")

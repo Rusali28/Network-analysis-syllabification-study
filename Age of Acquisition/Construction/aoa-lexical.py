@@ -112,9 +112,9 @@ import pickle
 with open('aoagraph_spel_wgt.pkl','wb') as file:
     pickle.dump(aoagraph, file)
 
-print("DONEEEEEEEE___________")
+print("DONE___________")
 
-##TO BUILD YEARWISE LEXICAL GRAPHS (aoagraphs) - for each yearwise data, we construct a new network, which is built upon cumulative yearwise data starting from the first year, up till the year being considered in the particular iteration
+##TO BUILD YEARWISE LEXICAL GRAPHS (aoagraphs) - for each year's data, we construct a new network, that incorporates all the cumulative data from the initial year up to the year currently being considered. Thus it is ensured that each year's graph builds upon the previous years' data, hence providing a comprehensive and evolving representation of the lexical network over time.
 
 def yearwisewordgraph(n, yearname):
     

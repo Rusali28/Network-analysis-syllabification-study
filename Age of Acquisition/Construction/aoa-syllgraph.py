@@ -166,9 +166,15 @@ for j in sylldict:
 #the minimum AoA value is now accordingly added to every node in the syllabary graph    
 nx.set_node_attributes(aoa_syllgraph, values = nodewgtdict, name = 'aoaminvalue') 
 
+import pickle
 
+with open('aoa-syllgraph_spel_wgt.pkl','wb') as file:
+    pickle.dump(aoa_syllgraph, file)
 
-#TO BUILD YEARWISE SYLLABARY GRAPHS (syllgraphs) - for each yearwise data, we construct a new network, which is built upon cumulative yearwise data starting from the first year, up till the year being considered in the particular iteration
+print("DONE___________")
+
+#For calculating the syllabary yearwise networks, we consider each year's data, and construct a new network, that incorporates all the cumulative data from the initial year up to the year currently being considered. Thus it is ensured that each year's graph builds upon the previous years' data, hence providing a comprehensive and evolving representation of the syllabary network over time.
+
 yeargraph = {}
 
 for i in aoadict:
