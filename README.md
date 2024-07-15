@@ -27,14 +27,14 @@ Here is a small representation of the English lexical and syllabary networks.
   <img src="Graph%20images/Graph-example/wordgraph-eg.PNG" alt="lexgraph" style="width:50%;">
   <br>
   <b>Figure 1:</b> Example of the English lexical graph
-</p>s
+</p>
 
 <p align="center">
   <img src="Graph%20images/Graph-example/syllgraph-eg.PNG" alt="syllgraph" style="width:50%;">
   <br>
-  <b>Figure 1:</b> Example of the English syllabary graph
+  <b>Figure 2:</b> Example of the English syllabary graph
 </p>
 
 ## Network Analysis
 
-A detailed network analysis for 
+A detailed network analysis consisting of all major network topology features are calculated and evaluated to study the complex and small world nature of all the networks. 
