@@ -22,8 +22,18 @@ Furthermore, considering Lexical and Syllabary as the parent types, two types of
 ## Graph samples
 Here is a small representation of the English lexical and syllabary networks. 
 
-![lexgraph](Graph%20images/Graph-example/wordgraph-eg.PNG)
-![syllgraph](Graph%20images/Graph-example/syllgraph-eg.PNG)
+
+<p align="center">
+  <img src="Graph%20images/Graph-example/wordgraph-eg.PNG" alt="lexgraph" style="width:50%;">
+  <br>
+  <b>Figure 1:</b> Example of the English lexical graph
+</p>s
+
+<p align="center">
+  <img src="Graph%20images/Graph-example/syllgraph-eg.PNG" alt="syllgraph" style="width:50%;">
+  <br>
+  <b>Figure 1:</b> Example of the English syllabary graph
+</p>
 
 ## Network Analysis
 
