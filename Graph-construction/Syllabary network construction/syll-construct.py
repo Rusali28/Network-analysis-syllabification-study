@@ -31,7 +31,7 @@ finalwords = []
 for i in range(len(words)):
   newword = ""
   for j in words[i]:
-    if j!='1':
+    if j!='*':
       newword=newword+j
       #print(newword)
   finalwords.append(newword)
@@ -48,7 +48,7 @@ for i in range(len(syll)):
   finalsyll = []
   newsyll = ""
   for j in syll[i]:
-    if(j!='1'):
+    if(j!='*'):
       if(j=='$'):
         finalsyll.append(newsyll)
         newsyll = ""
