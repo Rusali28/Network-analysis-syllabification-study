@@ -8,5 +8,23 @@ In this work, we consider two parent types of networks:
 - **Syllabary networks** : The nodes represent each unique syllable of the language and an edge is generated when two syllable nodes have at least one word in common.
 - **Lexical networks** : The nodes represent a word and two words are connected by an edge when they share at least one common syllable
 
+The networks are built across four major languages:
+- English
+- French
+- German
+- Spanish
+
+Furthermore, considering Lexical and Syllabary as the parent types, two types of child networks are constructed using datasets based on two domains of each language:
+
+- Spelling
+- Pronunciation
+
+## Graph samples
+Here is a small representation of the English lexical and syllabary networks. 
+
 ![lexgraph](Graph%20images/Graph-example/wordgraph-eg.PNG)
 ![syllgraph](Graph%20images/Graph-example/syllgraph-eg.PNG)
+
+## Network Analysis
+
+A detailed network analysis for 

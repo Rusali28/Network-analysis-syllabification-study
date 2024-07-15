@@ -1,3 +1,18 @@
+##All graphs are stored as pickle files. 
+
+def readinggraphs(filename):
+    graph = pd.read_pickle(filename)
+    print(len(graph.nodes), len(graph.edges))
+    
+    flag = 0
+    for i,j in list(graph.edges):
+        print(i," ", j," ------- ",graph.get_edge_data(i,j))
+        flag+=1
+        if(flag==50):
+            break
+    
+    return graph
+
 ##AVERAGE CONNECTIVITY
 
 def avg_con_k(filename):
