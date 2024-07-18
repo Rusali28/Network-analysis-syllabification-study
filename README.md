@@ -37,4 +37,24 @@ Here is a small representation of the English lexical and syllabary networks.
 
 ## Network Analysis
 
-A detailed network analysis consisting of all major network topology features are calculated and evaluated to study the complex and small world nature of all the networks. 
+A detailed network analysis consisting of all major network topology features are calculated and evaluated to study elementary characteristics that define the main types of networks like random networks, small world networks and scale free networks. 
+
+A mathematical evaluation of degree distribution of networks to observe best fit is conducted.
+
+## Dataset Format and Network Construction
+
+Our cleaning, pre-processing and modelling of our dataset results in a dictionary where keys are the words and values are the corresponding list of syllables associated with each word.
+
+
+<p align="center">
+  <img src="Graph%20images/Data/dict.png" alt="dict" style="width:50%;">
+  <br>
+  <b>Figure 3:</b> Example of the generated dictionary data
+</p>
+
+To generate the lexical and syllabary networks, 
+
+`python lex-construct.py` (for lexical networks)
+
+`python syll-construct.py` (for syllabary networks)
+

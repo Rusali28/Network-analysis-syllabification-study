@@ -11,6 +11,7 @@ dutchdata = pd.read_csv("/users/grad/rsaha/Rusali/Data/syll_dutch_full_spel.txt"
 
 
 #Clean, analyse and restructure data into a dataframe
+dutchdata.info()
 dutchdata = dutchdata.drop(['Unnamed: 1','Unnamed: 2','Unnamed: 3','Unnamed: 4'], axis = 1)
 
 ##Line of code below changes with respect to the language
@@ -19,6 +20,10 @@ dutchdata = dutchdata.rename(columns={'F*t*r*e':'words', 'F$t*r*e':'syllables'})
 
 #Final dataframe has two columns - words, syllables
 dutchspel = dutchdata[['words','syllables']].copy()
+dutchspel.describe()
+
+#Check for null entries in the dataset
+sns.heatmap(dutchspel.isnull(), yticklabels = False, cbar = False, cmap = 'viridis')
 
 
 #Extract words list from dataframe
