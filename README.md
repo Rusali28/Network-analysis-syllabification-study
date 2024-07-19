@@ -52,7 +52,7 @@ Our cleaning, pre-processing and modelling of our dataset results in a dictionar
   <b>Figure 3:</b> Example of the generated dictionary data
 </p>
 
-To generate the lexical and syllabary networks, 
+To generate the lexical and syllabary networks, (by default we consider spelling based data)
 
 ```bash
 python lex-construct.py (for lexical networks)
@@ -61,7 +61,7 @@ python lex-construct.py (for lexical networks)
 ```bash
 python syll-construct.py (for syllabary networks)
 ```
-
+To generate the lexical and syllabary networks based on pronunciation data, 
 ```bash
 python lex-construct-pron.py (for lexical networks)
 ```
