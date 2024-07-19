@@ -52,22 +52,33 @@ Our cleaning, pre-processing and modelling of our dataset results in a dictionar
   <br>
   <b>Figure 3:</b> Example of the generated dictionary data
 </p>
-
+<br>
 To generate the lexical and syllabary networks, (by default we consider spelling based data)
 
 ```bash
 python lex-construct.py (for lexical networks)
 ```
-
 ```bash
 python syll-construct.py (for syllabary networks)
 ```
-To generate the lexical and syllabary networks based on pronunciation data, 
+To generate the lexical and syllabary networks based on pronunciation data,
+
 ```bash
 python lex-construct-pron.py (for lexical networks)
 ```
-
 ```bash
 python syll-construct-pron.py (for syllabary networks)
 ```
 
+To generate the age of acquisition networks, we filter out words for which age of acquisition (AoA) data is available and subsequently proceed with network construction. 
+
+For the syllabary AoA networks, all words containing a pair of syllables are considered while forming the edges. The word with the minimum age of acquisition value out of them is finally chosen and the AoA value is assigned accordingly.
+
+For generation of AoA networks please use the following:
+
+```bash
+python aoa-lexical.py (for lexical networks)
+```
+```bash
+python aoa-syllgraph.py (for syllabary networks)
+```
