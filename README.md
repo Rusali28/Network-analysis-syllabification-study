@@ -61,3 +61,12 @@ python lex-construct.py` (for lexical networks)
 ```bash
 python syll-construct.py` (for syllabary networks)
 ```
+
+```bash
+python lex-construct.py` (for lexical networks)
+```
+
+```bash
+python syll-construct.py` (for syllabary networks)
+```
+
