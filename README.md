@@ -55,18 +55,18 @@ Our cleaning, pre-processing and modelling of our dataset results in a dictionar
 To generate the lexical and syllabary networks, 
 
 ```bash
-python lex-construct.py` (for lexical networks)
+python lex-construct.py (for lexical networks)
 ```
 
 ```bash
-python syll-construct.py` (for syllabary networks)
+python syll-construct.py (for syllabary networks)
 ```
 
 ```bash
-python lex-construct.py` (for lexical networks)
+python lex-construct-pron.py (for lexical networks)
 ```
 
 ```bash
-python syll-construct.py` (for syllabary networks)
+python syll-construct-pron.py (for syllabary networks)
 ```
 
