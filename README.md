@@ -49,6 +49,7 @@ Our cleaning, pre-processing and modelling of our dataset results in a dictionar
 <p align="center">
   <img src="Graph%20images/Data/dict.png" alt="dict" style="width:50%;">
   <br>
+  <br>
   <b>Figure 3:</b> Example of the generated dictionary data
 </p>
 
