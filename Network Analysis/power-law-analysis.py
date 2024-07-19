@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import powerlaw
+import pandas as pd
 
 def readinggraphs(filename):
     graph = pd.read_pickle(filename)
@@ -18,6 +19,7 @@ def readinggraphs(filename):
 
 graph = readinggraphs("./Spel graphs/frenchgraph_unwgt.pkl")
 
+#Preparing the network to collect degree distribution data
 degrees = [val for (node, val) in graph.degree()]
 
 dic = {}
@@ -30,7 +32,7 @@ for i in degrees:
 log_degrees = [np.log10(degree) for degree in dic.keys()]
 log_frequencies = [np.log10(frequency) for frequency in dic.values()] 
 
-
+#Based on previous works, log-log plots are constructed to visualize and make intial estimations 
 plt.figure(figsize=(10,10))
 plt.scatter(log_degrees, log_frequencies, color='blue', s=10)
 plt.xlabel('Log Degree')
@@ -41,7 +43,7 @@ plt.show()
 plt.savefig('./Graph images/Spel graph images/eng_wordgraph_loglog.eps', bbox_inches='tight', format='eps')
 
 
-
+#Computing parameters for power law and lognormal distribution
 results = powerlaw.Fit(degrees, discrete=True)
 
 alpha = print(results.power_law.alpha)
@@ -65,7 +67,7 @@ mu = print(results.lognormal.mu)
 sigma = print(results.lognormal.sigma)
 
 
-
+#Histogram plots of the degree distribution and node frequency are constructed for all networks and languages
 x = pd.Series(degrees)
 f = x.plot.hist(bins=28)
 #f.figure.savefig('./Graph images/Spel graph images/german_spel_hist.png', bbox_inches='tight')
@@ -76,64 +78,42 @@ plt.savefig('./Graph images/Spel graph images/spanish_wordgraph_histogram.eps', 
 plt.show()
 
 
-
+#Fitting the empirical degree distribution to our three candidate distributions
 fig, ax = plt.subplots(figsize=(6, 6))
-#fig2 = results.plot_ccdf(linewidth = 2, color= 'b',linestyle='--',label='Empirical data') #observed
-
 fig2 = powerlaw.plot_ccdf(degrees, color='b', marker='o', linestyle='None', label='Data', linewidth=1)
 
-#ax.tick_params(axis='x', labelsize=50)
 fig2.tick_params(axis='both', which='major', labelsize=20)
 fig2.tick_params(axis='both', which='minor', labelsize=20)
 
-
-results.power_law.plot_ccdf( ax = fig2, color= 'g', label='Power law distribution') #expected
+results.power_law.plot_ccdf( ax = fig2, color= 'g', label='Power law distribution') 
 results.lognormal.plot_ccdf( ax = fig2, color= 'r', label = 'Lognormal distribution') 
 results.exponential.plot_ccdf( ax = fig2, color= 'c', label = 'Exponential distribution') 
 
 fig2.set_ylabel(r"$p(Degree\geq x)$", fontsize = 20)
 fig2.set_xlabel(r"Degree", fontsize = 20)
 handles, labels = fig2.get_legend_handles_labels()
-#fig2.set_xticks([3000, 4000, 5000, 6000, 7000])
-
 fig2.legend(handles, labels, loc=3, fontsize=8)
-
 fig2.figure.savefig('./Graph images/Spel graph images/french_wordgraph_model.eps', bbox_inches='tight', format='eps')
 
 
+#Studying the representation of the Complementary Cumulative Distribution Function against the degree distribution of the network
 plt.figure(figsize=(10,8))
 results.plot_ccdf(color='r', linestyle='--', label='Power-law fit')
 powerlaw.plot_ccdf(degrees, color='b', marker='o', linestyle='None', label='Data', linewidth=1)
-
 plt.legend()
 plt.xlabel('Degree (log scale)')
 plt.ylabel('Complementary Cumulative Distribution Function (log scale)')
 plt.show()
 
-
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 8))
-
-# Plot on the first axis (ax1)
-results.plot_ccdf(ax=ax1, color='r', linestyle='--', label='Power-law fit')
-powerlaw.plot_ccdf(degrees, color='b', marker='o', linestyle='None', label='Data', linewidth=1)
-
-# Plot on the second axis (ax2)
-results.power_law.plot_ccdf(ax=ax2, color='g', label='Power law distribution')
-
-# Add labels, legends, etc. for both axes
-
-plt.show()
+#The distribution of degree and node frequency is plotted to study patterns, consistency and anomalies
+m = list(sorted(dic.keys()))
+n = list(dic.values())
 
 p = plt.figure(figsize=(7,5))
 plt.xlabel("English Degree")
 plt.ylabel("Perc. of nodes")
 plt.plot(m,n, lw = 0.55)
 plt.scatter(m,n, s = 1.15)
-
-
-
-m = list(sorted(dic.keys()))
-n = list(dic.values())
 
 p = plt.figure(figsize=(7,5))
 plt.xlabel("Spanish Degree")
