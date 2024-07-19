@@ -21,6 +21,11 @@ spanishdata = spanishdata.rename(columns={'A1b1A1k1O':'words', 'A$b1A$k1O':'syll
 #Final dataframe has two columns - words, syllables
 spanishspel = spanishdata[['words','syllables']].copy()
 
+spanishspel.describe()
+
+#Check for null entries in the dataset
+sns.heatmap(spanishspel.isnull(), yticklabels = False, cbar = False, cmap = 'viridis')
+
 
 #Extract words list from dataframe
 words = list(spanishdata['words'])

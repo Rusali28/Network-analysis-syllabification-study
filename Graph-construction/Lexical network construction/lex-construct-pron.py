@@ -20,6 +20,11 @@ dutchdata = dutchdata.rename(columns={'O1t1E1R':'words', 'O$t1E1R':'syllables'})
 #Final dataframe has two columns - words, syllables
 dutchspel = dutchdata[['words','syllables']].copy()
 
+dutchspel.describe()
+
+#Check for null entries in the dataset
+sns.heatmap(dutchspel.isnull(), yticklabels = False, cbar = False, cmap = 'viridis')
+
 
 #Extract words list from dataframe
 words = list(dutchdata['words'])

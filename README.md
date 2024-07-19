@@ -45,7 +45,7 @@ A mathematical evaluation of degree distribution of networks to observe best fit
 
 Our cleaning, pre-processing and modelling of our dataset results in a dictionary where keys are the words and values are the corresponding list of syllables associated with each word.
 
-
+<br>
 <p align="center">
   <img src="Graph%20images/Data/dict.png" alt="dict" style="width:50%;">
   <br>
@@ -54,7 +54,10 @@ Our cleaning, pre-processing and modelling of our dataset results in a dictionar
 
 To generate the lexical and syllabary networks, 
 
-`python lex-construct.py` (for lexical networks)
+```bash
+python lex-construct.py` (for lexical networks)
+```
 
-`python syll-construct.py` (for syllabary networks)
-
+```bash
+python syll-construct.py` (for syllabary networks)
+```
