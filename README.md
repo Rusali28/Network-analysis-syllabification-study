@@ -35,12 +35,13 @@ Here is a small representation of the English lexical and syllabary networks.
   <b>Figure 2:</b> Example of the English syllabary graph
 </p>
 
+<!--
 ## Network Analysis
 
 A detailed network analysis consisting of all major network topology features are calculated and evaluated to study elementary characteristics that define the main types of networks like random networks, small world networks and scale free networks. 
 
 A mathematical evaluation of degree distribution of networks to observe best fit is conducted.
-
+-->
 ## Dataset Format and Network Construction
 
 Our cleaning, pre-processing and modelling of our dataset results in a dictionary where keys are the words and values are the corresponding list of syllables associated with each word.
